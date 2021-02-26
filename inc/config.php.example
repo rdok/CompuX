@@ -1,0 +1,12 @@
+<?php
+
+define("BASE_URL", "/");
+define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"] . "/");
+
+define("DB_HOST", "");
+define("DB_NAME", "");
+define("DB_PORT", "");
+define("DB_USER", "");
+define("DB_PASS", "");
+
+define("CONTACT_EMAIL", "");
