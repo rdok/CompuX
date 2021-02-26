@@ -1,27 +1,27 @@
-RewriteEngine On
-RewriteRule ^products/$ products/products.php
-RewriteRule ^products/([0-9]+)/$ products/product.php?id=$1
-RewriteRule ^disclaimer.php$ /compux_local/disclaimer/ 
-# WARNING need to change 'compux_local' if change location of website
-RewriteRule ^receipt.php$ /compux_local/receipt/ [R=301]
-RewriteRule ^products.php$ /compux_local/products/ [R=301]
-# Rewrite rule that product detail page loads with or without a trailing slash.
-RewriteRule ^(products/[0-9]+)$ /compux_local/$1/ [R=301]
-RewriteRule ^contact.php$ /compux_local/contact/ [R=301]
-# Changes the web address for the thank you page: "contact/?status=thanks" to "contact/thanks/"
-RewriteRule ^contact/?status=thanks$ contact/thanks/
-
-# Redirects old web addresses like the product detail page addresses that have GET
-# variables require a sophisticated rewrite rule. 
-RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
-RewriteRule ^product.php$ /compux_local/products/%1/? [R=301]
-
-
-
-##########################################
-# for all files request that do not exist redirect to home page
-ErrorDocument 404 /compux_local/
-# prevent directories access - genereate 403 error - redirect to home page
-# disable directory listing
-Options -Indexes
-ErrorDocument 403 /compux_local/
+#RewriteEngine On
+#RewriteRule ^products/$ products/products.php
+#RewriteRule ^products/([0-9]+)/$ products/product.php?id=$1
+#RewriteRule ^disclaimer.php$ /compux_local/disclaimer/
+## WARNING need to change 'compux_local' if change location of website
+#RewriteRule ^receipt.php$ /compux_local/receipt/ [R=301]
+#RewriteRule ^products.php$ /compux_local/products/ [R=301]
+## Rewrite rule that product detail page loads with or without a trailing slash.
+#RewriteRule ^(products/[0-9]+)$ /compux_local/$1/ [R=301]
+#RewriteRule ^contact.php$ /compux_local/contact/ [R=301]
+## Changes the web address for the thank you page: "contact/?status=thanks" to "contact/thanks/"
+#RewriteRule ^contact/?status=thanks$ contact/thanks/
+#
+## Redirects old web addresses like the product detail page addresses that have GET
+## variables require a sophisticated rewrite rule.
+#RewriteCond %{QUERY_STRING} ^id=([0-9]+)$
+#RewriteRule ^product.php$ /compux_local/products/%1/? [R=301]
+#
+#
+#
+###########################################
+## for all files request that do not exist redirect to home page
+#ErrorDocument 404 /compux_local/
+## prevent directories access - genereate 403 error - redirect to home page
+## disable directory listing
+#Options -Indexes
+#ErrorDocument 403 /compux_local/
