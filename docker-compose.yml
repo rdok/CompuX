@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  web:
+    image: php:8.0-apache-buster
+#    image: httpd:2.4
+    ports:
+    - 8080:80
+    volumes:
+    - .:/var/www/html/
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD: secret
